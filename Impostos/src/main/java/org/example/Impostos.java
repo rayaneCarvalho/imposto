@@ -66,21 +66,4 @@ public class Impostos {
         this.valor = valor;
     }
 
-    //GPT que fez essa parte
-    /*public float getTaxaImposto(String uf) {
-        if (estadoImposto.containsKey(uf)) {
-            return estadoImposto.get(uf);
-        } else {
-            return 0.0;
-        }
-    }
-
-    public void setTaxaImposto(String uf, float valor) {
-        if (estadoImposto.containsKey(uf)) {
-            estadoImposto.put(uf, valor);
-        } else {
-            throw new IllegalArgumentException("Estado não encontrado");
-        }
-    }*/
-
 }
