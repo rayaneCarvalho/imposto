@@ -34,21 +34,32 @@ public class Impostos {
         put("TO" , 18.0);
     }};
     private String uf;
-    private double valor;
+    private float valor;
+
+    public float calcularImposto(){
+        float total;
+
+        return total = (float) (valor + (valor * (estadoImposto.get(uf)/100)));
+    }
 
     public String getUf() {
         return uf;
     }
 
     public void setUf(String uf) {
-        this.uf = uf;
+        if (estadoImposto.containsKey(uf)) {
+            this.uf = uf;
+        }
+        else{
+            throw new IllegalArgumentException("UF inválido");
+        }
     }
 
-    public double getValor() {
+    public float getValor() {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(float valor) {
         if(valor<=0){
             throw new IllegalArgumentException("Valor inválido");
         }
@@ -56,7 +67,7 @@ public class Impostos {
     }
 
     //GPT que fez essa parte
-    public double getTaxaImposto(String uf) {
+    /*public float getTaxaImposto(String uf) {
         if (estadoImposto.containsKey(uf)) {
             return estadoImposto.get(uf);
         } else {
@@ -64,12 +75,12 @@ public class Impostos {
         }
     }
 
-    public void setTaxaImposto(String uf, double valor) {
+    public void setTaxaImposto(String uf, float valor) {
         if (estadoImposto.containsKey(uf)) {
             estadoImposto.put(uf, valor);
         } else {
             throw new IllegalArgumentException("Estado não encontrado");
         }
-    }
+    }*/
 
 }
